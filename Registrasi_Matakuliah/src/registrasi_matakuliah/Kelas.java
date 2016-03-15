@@ -10,5 +10,19 @@ package registrasi_matakuliah;
  * @author Remal
  */
 public class Kelas {
-    
+    	private Matakuliah matakuliah;
+	private Dosen dosen;
+	
+	public kelas(Matakuliah matakuliah){
+		this.matakuliah=matakuliah;
+	}
+	
+	public void setDosen(Dosen d){
+		dosen=d;
+	}
+
+	public void setMatakuliah(Matakuliah m){
+		matakuliah=m;
+	}
+	
 }

@@ -10,5 +10,15 @@ package registrasi_matakuliah;
  * @author Remal
  */
 public class Mahasiswa {
-    
+    	public Mahasiswa(String nama, int nim, kelas pilihan){
+		
+	}
+	
+	public void addKelas(kelas k){
+		
+	}
+	
+	public void removeKelas(kelas id){
+		
+	}
 }
