@@ -21,10 +21,14 @@ public class Kelas {
 		this.dosen=dosen;
 	}
 
-	public void setMatakuliah(Matakuliah m){
-		matakuliah=m;
+	public void setMatakuliah(Matakuliah matakuliah){
+		this.matakuliah=matakuliah;
 	}
 	public String getDosen(Dosen dosen){
-		return dosen;
+		return dosen.getNama();
+	}
+        
+        public String getMatakuliah(Matakuliah matakuliah){
+		return matakuliah.getNamaMK();
 	}
 }
