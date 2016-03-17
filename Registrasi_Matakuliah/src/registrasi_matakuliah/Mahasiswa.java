@@ -61,13 +61,13 @@ public class Mahasiswa
 		}
 	}
 	
-	public void removeKelas(Kelas id)
+	public void removeKelas(String namaMatkul)
 	{
 		public void removeKelas(String namaMatkul)
 	{
-		if(namaMatkul === pilihan[nKelas].getMatakuliah)
+		if(namaMatkul == pilihan[nKelas].getMatakuliah())
 		{	
-			this.pilihan[nKelas].setMatakuliah = " ";
+			this.pilihan[nKelas].setMatakuliah("","");
 			nKelas++;
 		} else
 		{
