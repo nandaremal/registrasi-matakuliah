@@ -28,7 +28,7 @@ public class Mahasiswa extends Orang
 	
 	public Mahasiswa(String nama, String nim)
 	{
-		this.nama = nama;
+		super(nama) = nama;
 		this.nim = nim;
 		pilihan = new Kelas[5]; //Default max Kelas = 5, jika tidak di set
 		maxKelas = 5;
@@ -36,7 +36,7 @@ public class Mahasiswa extends Orang
 	
 	public Mahasiswa(String nama, String nim, int maxKelas)
 	{
-		this.nama = nama;
+		super(nama) = nama;
 		this.nim = nim;
 		this.maxKelas = maxKelas;
 		pilihan = new Kelas[maxKelas];
