@@ -17,12 +17,14 @@ public class Kelas {
 		this.matakuliah=matakuliah;
 	}
 	
-	public void setDosen(Dosen d){
-		dosen=d;
+	public void setDosen(Dosen dosen){
+		this.dosen=dosen;
 	}
 
 	public void setMatakuliah(Matakuliah m){
 		matakuliah=m;
 	}
-	
+	public String getDosen(Dosen dosen){
+		return dosen;
+	}
 }
