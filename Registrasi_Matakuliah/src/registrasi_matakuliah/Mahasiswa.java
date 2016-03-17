@@ -9,23 +9,12 @@ package registrasi_matakuliah;
  *
  * @author Nuzulul
  */
-public class Mahasiswa
+public class Mahasiswa extends Orang
 {
 	private int nKelas=0;
 	private Kelas[] pilihan;
 	private int maxKelas;
 	private String nim;
-	private String nama;
-	
-	public void setNama(String nama)
-	{
-		this.nama = nama;
-	}
-	
-	public String getNama()
-	{
-		return nama;
-	}
 	
 	public void setNim(String nim)
 	{
