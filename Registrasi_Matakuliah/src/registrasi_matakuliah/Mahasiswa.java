@@ -53,7 +53,7 @@ public class Mahasiswa
 		pilihan = new Kelas[maxKelas];
 	}
 	
-	void addKelas(kelas k)
+	public void addKelas(kelas k)
 	{
 		if(nKelas<maxKelas){
 			this.pilihan[nKelas]=pilihan;
@@ -63,7 +63,17 @@ public class Mahasiswa
 	
 	public void removeKelas(Kelas id)
 	{
-		
+		public void removeKelas(String namaMatkul)
+	{
+		if(namaMatkul === pilihan[nKelas].getMatakuliah)
+		{	
+			this.pilihan[nKelas].setMatakuliah = " ";
+			nKelas++;
+		} else
+		{
+			nKelas++;
+		}
+	}
 	}
 	
 	public int getJumlahKelas()
