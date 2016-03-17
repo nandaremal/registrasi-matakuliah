@@ -7,8 +7,33 @@ package registrasi_matakuliah;
 
 /**
  *
- * @author Remal
+ * @author Rizky_Afrizal_AW
  */
 public class Dosen {
+    private String Nip;
+	private String Nama;
+}
+
+Dosen(String Nip, String Nama){
+	this.Nip=Nip;
+	this.Nama=Nama;
+}
+
+public void setNip(String Nip){
+	this.Nip=Nip;
+}
+
+public String getNip(){
+    return Nip;
+}
+
+public void setNama(String Nama){
+    return Nama;
+} 
+
+public String getNama(){
+    return Nama;
+}
+    
     
 }
