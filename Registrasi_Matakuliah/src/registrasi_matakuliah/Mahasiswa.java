@@ -12,7 +12,7 @@ package registrasi_matakuliah;
 public class Mahasiswa
 {
 	private int nKelas=0;
-	private Kelas[] pilihan;
+	private Kelas[] pilihan=new Kelas[];
 	private int maxKelas;
 	private String nim;
 	private String nama;
@@ -65,7 +65,7 @@ public class Mahasiswa
 	{
 		public void removeKelas(String namaMatkul)
 	{
-		if(namaMatkul === pilihan[nKelas].getMatakuliah)
+		if(namaMatkul = pilihan[nKelas].getMatakuliah())
 		{	
 			this.pilihan[nKelas].setMatakuliah = " ";
 			nKelas++;
