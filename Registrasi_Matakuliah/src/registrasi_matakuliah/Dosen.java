@@ -9,16 +9,22 @@ package registrasi_matakuliah;
  *
  * @author Rizky_Afrizal_AW
  */
-public class Dosen {
+public class Dosen extends orang{
 	private int i; 
 	private String kode;
 	private String Nip;
-	private String Nama;
 	private Kelas[] nKelas;
+	private Matakuliah matakuliah;
+	
+public Dosen(String nama,String alamat, String jenisk){
+		super(nama)=nama;
+		super(alamat)=alamat;
+		super(jenisk)=jenisk;
+}
 	
 public Dosen(String Nip, String Nama){
 	this.Nip=Nip;
-	this.Nama=Nama;
+	super(nama)=nama;
 	nKelas=new Kelas[5];
 	i=5;
 	
@@ -26,7 +32,7 @@ public Dosen(String Nip, String Nama){
 
 public Dosen(String Nip, String Nama, int i){
 	this.Nip=Nip;
-	this.Nama=Nama;
+	super(nama)=nama;
 	this.i=i;
 	nKelas=new Kelas[i];
 }
@@ -48,7 +54,7 @@ public void setNama(String Nama){
 } 
 
 public String getNama(){
-    return Nama;
+    return nama;
 }
     
     
