@@ -24,9 +24,9 @@ public Dosen(String nama, String Nip){
 	
 }
 
-public Dosen(String Nip, String nama, int i){
-	this.Nip=Nip;
+public Dosen( String nama, String Nip, int i){
 	super(nama);
+        this.Nip=Nip;
 	this.i=i;
 	nKelas=new Kelas[i];
 }
