@@ -10,29 +10,18 @@ package registrasi_matakuliah;
  * @author Rizky_Afrizal_AW
  */
 public class Dosen extends Orang{
-	private int i; 
 	private String kode;
 	private String Nip;
-	private Kelas[] nKelas;
-	private Matakuliah matakuliah;
 	
 public Dosen(String nama, String Nip){
         super(nama);
         this.Nip=Nip;
-	nKelas=new Kelas[5];
-	i=5;
 	
 }
 
 public Dosen( String nama, String Nip, int i){
 	super(nama);
         this.Nip=Nip;
-	this.i=i;
-	nKelas=new Kelas[i];
-}
-
-public void seti(int i){
-	this.i=i;
 }
 
 public void setNip(String Nip){
