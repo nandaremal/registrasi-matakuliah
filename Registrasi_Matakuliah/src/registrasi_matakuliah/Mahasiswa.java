@@ -52,13 +52,14 @@ public class Mahasiswa extends Orang
 	
 	public void removeKelas(String namaMatkul)
 	{
-		if(namaMatkul == pilihan[nKelas].getMatakuliah())
+	/*	if(namaMatkul == pilihan[nKelas].getMatakuliah())
 		{	
 			this.pilihan[nKelas].setMatakuliah("","");
 		} else
 		{
 			nKelas++;
 		}
+	*/ 
 	}
 	
 	public int getJumlahKelas()
