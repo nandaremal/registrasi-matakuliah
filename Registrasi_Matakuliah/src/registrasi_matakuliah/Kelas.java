@@ -13,7 +13,7 @@ public class Kelas {
     	private Matakuliah matakuliah;
 	private Dosen dosen;
 	
-	public kelas(Matakuliah matakuliah){
+	public Kelas(Matakuliah matakuliah){
 		this.matakuliah=matakuliah;
 	}
 	
@@ -29,6 +29,6 @@ public class Kelas {
 	}
         
         public String getMatakuliah(Matakuliah matakuliah){
-		return matakuliah.namaMK();
+		return matakuliah.getNamaMK();
 	}
 }
