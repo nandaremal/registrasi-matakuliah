@@ -19,11 +19,6 @@ public Dosen(String nama, String Nip){
 	
 }
 
-public Dosen( String nama, String Nip, int i){
-	super(nama);
-        this.Nip=Nip;
-}
-
 public void setNip(String Nip){
 	this.Nip=Nip;
 }
