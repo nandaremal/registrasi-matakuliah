@@ -45,7 +45,7 @@ public class Mahasiswa extends Orang
 	public void addKelas(kelas k)
 	{
 		if(nKelas<maxKelas){
-			this.pilihan[nKelas]=pilihan;
+			this.pilihan[nKelas]=k;
 			nKelas++; 
 		}
 	}
