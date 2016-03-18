@@ -42,7 +42,7 @@ public class Mahasiswa extends Orang
 		pilihan = new Kelas[maxKelas];
 	}
 	
-	public void addKelas(kelas k)
+	public void addKelas(Kelas k)
 	{
 		if(nKelas<maxKelas){
 			this.pilihan[nKelas]=k;
