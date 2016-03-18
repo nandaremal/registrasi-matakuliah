@@ -28,7 +28,7 @@ public class Mahasiswa extends Orang
 	
 	public Mahasiswa(String nama, String nim)
 	{
-		super(nama) = nama;
+		super(nama);
 		this.nim = nim;
 		pilihan = new Kelas[5]; //Default max Kelas = 5, jika tidak di set
 		maxKelas = 5;
@@ -36,7 +36,7 @@ public class Mahasiswa extends Orang
 	
 	public Mahasiswa(String nama, String nim, int maxKelas)
 	{
-		super(nama) = nama;
+		super(nama);
 		this.nim = nim;
 		this.maxKelas = maxKelas;
 		pilihan = new Kelas[maxKelas];
@@ -52,17 +52,13 @@ public class Mahasiswa extends Orang
 	
 	public void removeKelas(String namaMatkul)
 	{
-		public void removeKelas(String namaMatkul)
-	{
 		if(namaMatkul == pilihan[nKelas].getMatakuliah())
 		{	
 			this.pilihan[nKelas].setMatakuliah("","");
-			nKelas++;
 		} else
 		{
 			nKelas++;
 		}
-	}
 	}
 	
 	public int getJumlahKelas()
