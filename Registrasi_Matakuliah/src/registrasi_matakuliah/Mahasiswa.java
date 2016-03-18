@@ -9,23 +9,12 @@ package registrasi_matakuliah;
  *
  * @author Nuzulul
  */
-public class Mahasiswa
+public class Mahasiswa extends Orang
 {
 	private int nKelas=0;
 	private Kelas[] pilihan;
 	private int maxKelas;
 	private String nim;
-	private String nama;
-	
-	public void setNama(String nama)
-	{
-		this.nama = nama;
-	}
-	
-	public String getNama()
-	{
-		return nama;
-	}
 	
 	public void setNim(String nim)
 	{
@@ -39,7 +28,7 @@ public class Mahasiswa
 	
 	public Mahasiswa(String nama, String nim)
 	{
-		this.nama = nama;
+		super(nama);
 		this.nim = nim;
 		pilihan = new Kelas[5]; //Default max Kelas = 5, jika tidak di set
 		maxKelas = 5;
@@ -47,33 +36,29 @@ public class Mahasiswa
 	
 	public Mahasiswa(String nama, String nim, int maxKelas)
 	{
-		this.nama = nama;
+		super(nama);
 		this.nim = nim;
 		this.maxKelas = maxKelas;
 		pilihan = new Kelas[maxKelas];
 	}
 	
-	public void addKelas(kelas k)
+	public void addKelas(Kelas k)
 	{
 		if(nKelas<maxKelas){
-			this.pilihan[nKelas]=pilihan;
+			this.pilihan[nKelas]=k;
 			nKelas++; 
 		}
 	}
 	
-	public void removeKelas(Kelas id)
+	public void removeKelas(String namaMatkul)
 	{
-		public void removeKelas(String namaMatkul)
-	{
-		if(namaMatkul = pilihan[nKelas].getMatakuliah())
+		if(namaMatkul == pilihan[nKelas].getMatakuliah())
 		{	
-			this.pilihan[nKelas].setMatakuliah = " ";
-			nKelas++;
+			this.pilihan[nKelas].setMatakuliah("","");
 		} else
 		{
 			nKelas++;
 		}
-	}
 	}
 	
 	public int getJumlahKelas()
