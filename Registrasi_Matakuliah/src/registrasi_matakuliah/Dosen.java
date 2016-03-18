@@ -16,23 +16,17 @@ public class Dosen extends Orang{
 	private Kelas[] nKelas;
 	private Matakuliah matakuliah;
 	
-public Dosen(String nama,String alamat, String jenisk){
-		super(nama)=nama;
-		super(alamat)=alamat;
-		super(jenisk)=jenisk;
-}
-	
-public Dosen(String Nip, String Nama){
-	this.Nip=Nip;
-	super(nama)=nama;
+public Dosen(String nama, String Nip){
+        super(nama);
+        this.Nip=Nip;
 	nKelas=new Kelas[5];
 	i=5;
 	
 }
 
-public Dosen(String Nip, String Nama, int i){
+public Dosen(String Nip, String nama, int i){
 	this.Nip=Nip;
-	super(nama)=nama;
+	super(nama);
 	this.i=i;
 	nKelas=new Kelas[i];
 }
@@ -47,15 +41,5 @@ public void setNip(String Nip){
 
 public String getNip(){
     return Nip;
-}
-
-public void setNama(String Nama){
-    return Nama;
 } 
-
-public String getNama(){
-    return nama;
-}
-    
-    
 }

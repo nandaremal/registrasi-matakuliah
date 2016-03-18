@@ -10,22 +10,30 @@ package registrasi_matakuliah;
  * @author Remal
  */
 public abstract class Orang {
-        private String nama;
-	private String alamat;
-	private String jenisk;
+        String nama;
+	String alamat;
+	String jenisk;
 	
-	public orang(String nama,String alamat, String jenisk){
+	public Orang(String nama,String alamat, String jenisk){
 		this.nama=nama;
 		this.alamat=alamat;
 		this.jenisk=jenisk;
 	}
 	
-	public orang(String nama, String alamat){
+	public Orang(String nama, String alamat){
 		this.nama=nama;
 		this.alamat=alamat;
 	}
 	
-	public orang(String nama){
+	public Orang(String nama){
 		this.nama=nama;
 	}
+        
+        public void setNama(String nama){
+            this.nama=nama;
+        }
+        
+        public String getNama(){
+            return nama;
+        }
 }
