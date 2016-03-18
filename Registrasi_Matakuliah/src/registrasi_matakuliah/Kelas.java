@@ -29,6 +29,6 @@ public class Kelas {
 	}
         
         public String getMatakuliah(Matakuliah matakuliah){
-		return matakuliah.getNamaMK();
+		return matakuliah.namaMK();
 	}
 }

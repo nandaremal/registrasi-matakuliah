@@ -10,28 +10,32 @@ package registrasi_matakuliah;
  * @author Remal
  */
 public class Matakuliah {
-       
-        public Matakuliah(String namaMK,int jumlahSKS){
-		
+        private String namaMK;
+	private int jumlahSKS;
+	
+	public Matakuliah(String namaMK,int jumlahSKS){
+		this.namaMK=namaMK;
+		this.jumlahSKS=jumlahSKS;
 	}
 	
 	public Matakuliah(String namaMK){
-		
+		this.namaMK=namaMK;
 	}
 	
-	public String setNamaMK(String namaMK){
-		
+	public void setNamaMK(String namaMK){
+		this.namaMK=namaMK;
 	}
 	
-	public int setJumlahSKS(int jumlahSKS){
-		
+	public void setJumlahSKS(int jumlahSKS){
+		this.jumlahSKS=jumlahSKS;
 	}
 
+	
 	public String getNamaMK(){
-		
+		return namaMK;
 	}
 	
 	public int getJumlahSKS(){
-		
+		return jumlahSKS;
 	}
 }

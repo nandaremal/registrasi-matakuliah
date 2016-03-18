@@ -9,7 +9,7 @@ package registrasi_matakuliah;
  *
  * @author Rizky_Afrizal_AW
  */
-public class Dosen extends orang{
+public class Dosen extends Orang{
 	private int i; 
 	private String kode;
 	private String Nip;

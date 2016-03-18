@@ -12,7 +12,7 @@ package registrasi_matakuliah;
 public class Mahasiswa
 {
 	private int nKelas=0;
-	private Kelas[] pilihan=new Kelas[];
+	private Kelas[] pilihan;
 	private int maxKelas;
 	private String nim;
 	private String nama;
