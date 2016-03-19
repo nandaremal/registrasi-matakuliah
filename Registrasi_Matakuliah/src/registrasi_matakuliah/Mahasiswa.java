@@ -50,18 +50,33 @@ public class Mahasiswa extends Orang
 		}
 	}
 	
-	public void removeKelas(String namaMatkul) 
-	{
-            int b;
-		for (b = 0; b <= maxKelas; b++)
-		{
-			if(namaMatkul == pilihan[b].getMatakuliah().getNamaMK())
-			{	
-				this.pilihan[b].getMatakuliah().setNamaMK("");
-				this.pilihan[b].getMatakuliah().setJumlahSKS(0);
+        
+        public void removeKelas(Kelas id){
+		int b;
+                int c;
+                c=nKelas;
+		for(b=0;b<nKelas;b++){
+			if(pilihan[b]==id){
+				pilihan[b]=null;
 			}
 		}
-	}
+                if(pilihan[b]==null){
+                    if(b==1){
+                        for(b=1;b<nKelas;b++){
+                            pilihan[b]=pilihan[b+1];
+                        }
+                    }
+                    else if((b>1) && (b<nKelas)){
+                        for(b=b;b<nKelas;b++){
+                            pilihan[b]=pilihan[b+1];
+                        }
+                    }
+                    else if(b==nKelas){
+                        nKelas=nKelas-1;
+                    }
+                }
+        }
+	
 	
 	public int getJumlahKelas()
 	{
