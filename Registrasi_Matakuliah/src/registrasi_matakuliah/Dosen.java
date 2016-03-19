@@ -10,7 +10,7 @@ package registrasi_matakuliah;
  * @author Rizky_Afrizal_AW
  */
 public class Dosen extends Orang{
-	private String kode;
+	private String Kode;
 	private String Nip;
 	
 public Dosen(String nama, String Nip){
@@ -26,4 +26,15 @@ public void setNip(String Nip){
 public String getNip(){
     return Nip;
 } 
+
+public void setKode(String Nip){
+	this.Kode=Kode;
+}
+
+public String getKode(){
+    return Kode;
+} 
+
+
+
 }
