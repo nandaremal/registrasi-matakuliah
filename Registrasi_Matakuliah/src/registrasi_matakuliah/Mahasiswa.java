@@ -56,6 +56,7 @@ public class Mahasiswa extends Orang
 		for(b=0;b<nKelas;b++){
 			if(pilihan[b]==id){
 				pilihan[b]=null;
+                                break;
 			}
 		}
                 if(pilihan[b]==null){
