@@ -26,22 +26,18 @@ public class Mahasiswa extends Orang
 		return nim;
 	}
 	
-	public Mahasiswa(String nama, String nim, String jenisk, String alamat)
+	public Mahasiswa(String nama,String alamat, String jenisk, String nim)
 	{
-		super(nama);
+		super(nama,alamat,jenisk);
 		this.nim = nim;
-		super(jenisk);
-		super(alamat);
 		pilihan = new Kelas[5]; //Default max Kelas = 5, jika tidak di set
 		maxKelas = 5;
 	}
 	
 	public Mahasiswa(String nama, String nim, String jenisk, String alamat, int maxKelas)
 	{
-		super(nama);
+		super(nama,alamat, jenisk);
 		this.nim = nim;
-		super(jenisk);
-		super(alamat);
 		this.maxKelas = maxKelas;
 		pilihan = new Kelas[maxKelas];
 	}
@@ -56,12 +52,13 @@ public class Mahasiswa extends Orang
 	
 	public void removeKelas(String namaMatkul) 
 	{
-		while (nKelas = 0; nKelas <= maxKelas; nKelas++)
+            int b;
+		for (b = 0; b <= maxKelas; b++)
 		{
-			if(namaMatkul == pilihan[nKelas].getMatakuliah())
+			if(namaMatkul == pilihan[b].getMatakuliah().getNamaMK())
 			{	
-				this.pilihan[nKelas].setMatakuliah(setNamaMK("")));
-				this.pilihan[nKelas].setMatakuliah(setJumlahSKS(0));
+				this.pilihan[b].getMatakuliah().setNamaMK("");
+				this.pilihan[b].getMatakuliah().setJumlahSKS(0);
 			}
 		}
 	}

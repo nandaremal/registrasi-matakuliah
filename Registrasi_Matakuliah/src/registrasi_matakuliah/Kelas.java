@@ -24,11 +24,11 @@ public class Kelas {
 	public void setMatakuliah(Matakuliah matakuliah){
 		this.matakuliah=matakuliah;
 	}
-	public String getDosen(Dosen dosen){
-		return dosen.getNama();
+	public Dosen getDosen(){
+		return dosen;
 	}
         
-        public String getMatakuliah(Matakuliah matakuliah){
-		return matakuliah.getNamaMK();
+        public Matakuliah getMatakuliah(){
+		return matakuliah;
 	}
 }

@@ -13,11 +13,9 @@ public class Dosen extends Orang{
 	private String Kode;
 	private String Nip;
 	
-public Dosen(String nama, String Nip, String jenisk, String alamat){
-        super(nama);
+public Dosen(String nama, String alamat, String jenisk, String Nip){
+        super(nama,alamat,jenisk);
         this.Nip=Nip;
-        super(jenisk);
-        super(alamat);
 	
 }
 
