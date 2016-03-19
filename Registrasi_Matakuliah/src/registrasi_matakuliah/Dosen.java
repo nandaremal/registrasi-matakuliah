@@ -27,7 +27,7 @@ public String getNip(){
     return Nip;
 } 
 
-public void setKode(String Nip){
+public void setKode(String Kode){
 	this.Kode=Kode;
 }
 
