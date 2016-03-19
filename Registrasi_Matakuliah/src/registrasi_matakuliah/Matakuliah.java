@@ -7,7 +7,7 @@ package registrasi_matakuliah;
 
 /**
  *
- * @author Remal
+ * @author Nuzulul & Rizky_Afrizal_AW
  */
 public class Matakuliah {
         private String namaMK;
