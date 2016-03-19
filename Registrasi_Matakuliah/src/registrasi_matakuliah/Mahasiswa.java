@@ -60,7 +60,8 @@ public class Mahasiswa extends Orang
 		{
 			if(namaMatkul == pilihan[nKelas].getMatakuliah())
 			{	
-				this.pilihan[nKelas].setMatakuliah(Null);
+				this.pilihan[nKelas].setMatakuliah(setNamaMK("")));
+				this.pilihan[nKelas].setMatakuliah(setJumlahSKS(0));
 			}
 		}
 	}
