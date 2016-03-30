@@ -15,6 +15,8 @@ public class Mahasiswa extends Orang
 	private Kelas[] pilihan;
 	private int maxKelas;
 	private String nim;
+        private String password;
+        private String Jurusan;
 	
 	public void setNim(String nim)
 	{
@@ -25,21 +27,23 @@ public class Mahasiswa extends Orang
 	{
 		return nim;
 	}
-	
-	public Mahasiswa(String nama,String alamat, String jenisk, String nim)
+	public Mahasiswa(String nama,String nim,String alamat, String jenisk, String Jurusan)
 	{
 		super(nama,alamat,jenisk);
 		this.nim = nim;
+                password=nim;
 		pilihan = new Kelas[5]; //Default max Kelas = 5, jika tidak di set
 		maxKelas = 5;
+                this.Jurusan=Jurusan;
 	}
 	
-	public Mahasiswa(String nama, String nim, String jenisk, String alamat, int maxKelas)
+	public Mahasiswa(String nama, String nim, String jenisk, String alamat, int maxKelas,String Jurusan)
 	{
 		super(nama,alamat, jenisk);
 		this.nim = nim;
 		this.maxKelas = maxKelas;
 		pilihan = new Kelas[maxKelas];
+                this.Jurusan=Jurusan;
 	}
 	
 	public void addKelas(Kelas k)
@@ -71,9 +75,16 @@ public class Mahasiswa extends Orang
                 }
         }
 	
-	
+	public Kelas getKelas(int i)
+	{
+             return pilihan[i];   
+	}
 	public int getJumlahKelas()
 	{
 		return nKelas;
+	}
+        public String getJurusan()
+	{
+		return Jurusan;
 	}
 }

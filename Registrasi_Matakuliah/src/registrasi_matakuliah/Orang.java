@@ -36,4 +36,13 @@ public abstract class Orang {
         public String getNama(){
             return nama;
         }
+        public String getAlamat()
+	{
+		return alamat;
+	}
+        public String getJenisK()
+	{
+		return jenisk;
+	}
+        
 }

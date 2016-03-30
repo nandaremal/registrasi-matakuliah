@@ -10,11 +10,15 @@ package registrasi_matakuliah;
  * @author Remal
  */
 public class Kelas {
+        private String id;
     	private Matakuliah matakuliah;
 	private Dosen dosen;
+ 
 	
-	public Kelas(Matakuliah matakuliah){
+	public Kelas(Matakuliah matakuliah,Dosen dosen, String id){
 		this.matakuliah=matakuliah;
+                this.dosen=dosen;
+                this.id=id;
 	}
 	
 	public void setDosen(Dosen dosen){
@@ -31,4 +35,7 @@ public class Kelas {
         public Matakuliah getMatakuliah(){
 		return matakuliah;
 	}
+        public String getId(){
+                return id;
+        }
 }
