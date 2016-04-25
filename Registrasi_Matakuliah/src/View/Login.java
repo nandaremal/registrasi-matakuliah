@@ -5,6 +5,11 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Nuzulul
@@ -28,17 +33,38 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         tfUsername = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         tfPassword = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        cbJabatan = new javax.swing.JComboBox<>();
+        cbJabatan = new javax.swing.JComboBox<String>();
         btnLogin = new javax.swing.JButton();
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Username");
+
+        tfUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfUsernameActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Password");
 
@@ -50,7 +76,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabel3.setText("Login sebagai :");
 
-        cbJabatan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Mahasiswa" }));
+        cbJabatan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Admin", "Mahasiswa" }));
 
         btnLogin.setText("Login");
 
@@ -105,46 +131,19 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//
     private void tfPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfPasswordActionPerformed
 
+    private void tfUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfUsernameActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
@@ -152,7 +151,35 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField tfPassword;
     private javax.swing.JTextField tfUsername;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnLogin() {
+        return btnLogin;
+    }
+
+    public Object getCbJabatan() {
+        return cbJabatan.getSelectedItem();
+    }
+
+    public String getPassword() {
+        return tfPassword.getText();
+    }
+
+    public String getUsername() {
+        return tfUsername.getText();
+    }
+    //.intern()
+    
+    public void reset(){
+        tfUsername.setText("");
+        tfPassword.setText("");
+    }
+    public void addListener(ActionListener e) {
+        btnLogin.addActionListener(e);
+    }
+
 }

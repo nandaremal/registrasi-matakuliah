@@ -18,8 +18,11 @@ import java.sql.SQLException;
  */
 public class ControllerHUAdmin implements ActionListener {
     private HUAdmin view;
-    private ControllerDosen view2;
-
+    private ControllerDataDosen view2;
+    private ControllerDataMahasiswa view3;
+    private ControllerDataKelas view4;
+    private ControllerLogin view5;
+    
     public ControllerHUAdmin() {
         view = new HUAdmin();
         view.addListener(this);
@@ -32,8 +35,23 @@ public class ControllerHUAdmin implements ActionListener {
         
         if (source.equals(view.getBtnDataDosen())) {
             view.dispose();
-            view2 = new ControllerDosen();       
+            view2 = new ControllerDataDosen();       
             view2.getView().setVisible(true);
+        }
+        else if (source.equals(view.getBtnDataMahasiswa())){
+            view.dispose();
+            view3 = new ControllerDataMahasiswa();
+            view3.getView().setVisible(true);
+        }
+        else if (source.equals(view.getBtnDataKelas())){
+            view.dispose();
+            view4 = new ControllerDataKelas();
+            view4.getView().setVisible(true);
+        }
+        else{
+            view.dispose();
+            view5= new ControllerLogin();
+            view5.getView().setVisible(true);
         }
     }
 

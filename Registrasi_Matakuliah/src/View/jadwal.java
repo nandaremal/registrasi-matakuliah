@@ -5,6 +5,15 @@
  */
 package View;
 
+import Model.Kelas;
+import Model.Mahasiswa;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Nuzulul
@@ -30,7 +39,7 @@ public class jadwal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         btnHome = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblJadwal = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,24 +53,24 @@ public class jadwal extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblJadwal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Hari", "Jam", "Ruangan", "Nama Dosen", "Nama Matakuliah", "Kelas"
+                "Nama Matakuliah", "jumlah sks", "Kode", "Nama Dosen", "kode dosen"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblJadwal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,42 +109,44 @@ public class jadwal extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jadwal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jadwal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jadwal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jadwal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new jadwal().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHome;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblJadwal;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnHome() {
+        return btnHome;
+    }
+
+    public JTable getTblJadwal() {
+        return tblJadwal;
+    }
+
+    
+    
+    public void addListener(ActionListener e) {
+        btnHome.addActionListener(e);
+    }
+    
+    public void addAdapter(MouseAdapter e) {
+        tblJadwal.addMouseListener(e);
+    }
+    
+    public void viewAll(ArrayList<Kelas> listKelas) {
+        String[] title = {"Nama Matakuliah","Jumlah SKS","Kode","Nama Dosen","Kode Dosen"};
+        String[][] data = new String[listKelas.size()][5];
+        for (int i = 0; i < listKelas.size(); i++) {
+            Kelas k = listKelas.get(i);
+            data[i][0] = k.getNamaMatkul();
+            data[i][1] = k.getJumlahSks();
+            data[i][2] = k.getKode();
+            data[i][3] = k.getNamaDosen();
+            data[i][4] = k.getKodeDosen();
+        }
+        tblJadwal.setModel(new DefaultTableModel(data,title));
+    }
 }

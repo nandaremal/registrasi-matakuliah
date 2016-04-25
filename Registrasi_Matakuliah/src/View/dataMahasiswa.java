@@ -5,6 +5,14 @@
  */
 package View;
 
+import Model.Mahasiswa;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Nuzulul
@@ -184,37 +192,37 @@ public class dataMahasiswa extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(dataMahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(dataMahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(dataMahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(dataMahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new dataMahasiswa().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(dataMahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(dataMahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(dataMahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(dataMahasiswa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new dataMahasiswa().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHome;
@@ -235,4 +243,88 @@ public class dataMahasiswa extends javax.swing.JFrame {
     private javax.swing.JTextField tfNama;
     private javax.swing.JTextField tfNim;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnHome() {
+        return btnHome;
+    }
+
+    public JButton getBtnInsert() {
+        return btnInsert;
+    }
+
+    public JButton getBtnView() {
+        return btnView;
+    }
+
+    public JTable getTblMahasiswa() {
+        return tblMahasiswa;
+    }
+
+    public void addListener(ActionListener e) {
+        btnHome.addActionListener(e);
+        btnInsert.addActionListener(e);
+        btnView.addActionListener(e);
+    }
+    
+    public void addAdapter(MouseAdapter e) {
+        tblMahasiswa.addMouseListener(e);
+    }
+    
+    public String getNama(){
+        return tfNama.getText();
+    }
+    
+    public String getNim(){
+        return tfNim.getText();
+    }
+    
+    public String getAlamat(){
+        return tfAlamat.getText();
+    }
+    
+    public String getJenisk(){
+        return tfJenisKelamin.getText();
+    }
+    
+    public String getJurusan(){
+        return tfJurusan.getText();
+    }
+    
+    public int getSelectedMahasiswa(){
+        return tblMahasiswa.getSelectedRow();
+    }
+    
+    public void viewAll(ArrayList<Mahasiswa> listMahasiswa) {
+        String[] title = {"Nama ","NIM","Alamat","Jenis Kelamin","Jurusan"};
+        String[][] data = new String[listMahasiswa.size()][5];
+        for (int i = 0; i < listMahasiswa.size(); i++) {
+            Mahasiswa m = listMahasiswa.get(i);
+            data[i][0] = m.getNama();
+            data[i][1] = m.getNim();
+            data[i][2] = m.getAlamat();
+            data[i][3] = m.getJenisK();
+            data[i][4] = m.getJurusan();
+        }
+        tblMahasiswa.setModel(new DefaultTableModel(data,title));
+    }
+    
+    
+    
+            
+    public void view(Mahasiswa m){
+        tfNama.setText(m.getNama());
+        tfNim.setText(m.getNim());
+        tfAlamat.setText(m.getAlamat());
+        tfJenisKelamin.setText(m.getJenisK());
+        tfJurusan.setText(m.getJurusan());
+    }
+    
+    
+    public void reset(){
+        tfNama.setText("");
+        tfNim.setText("");
+        tfAlamat.setText("");
+        tfJenisKelamin.setText("");
+        tfJurusan.setText("");
+    }
 }

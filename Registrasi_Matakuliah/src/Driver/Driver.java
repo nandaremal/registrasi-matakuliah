@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 package Driver;
-import Controller.ControllerDosen;
+import Controller.ControllerDataDosen;
 import java.sql.SQLException;
 import Database.Database;
 
-/**
+/**^
  *
  * @author Nuzulul
  */
@@ -19,7 +19,7 @@ public class Driver {
      */
     public static void main(String[] args) throws SQLException {
         // TODO code application logic here
-        new Controller.ControllerHUAdmin();
+        new Controller.ControllerLogin();
     }
     
 }

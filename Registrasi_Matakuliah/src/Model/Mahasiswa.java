@@ -27,6 +27,10 @@ public class Mahasiswa {
         jumlahKelas = 0;
     }
 
+    public Mahasiswa() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getNama() {
         return nama;
     }
@@ -73,4 +77,14 @@ public class Mahasiswa {
 			jumlahKelas++; 
 		}
     }
+
+    public Kelas getKelas(int i) {
+        return kelas[i];
+    }
+
+    public int getJumlahKelas() {
+        return jumlahKelas;
+    }
+    
+    
 }

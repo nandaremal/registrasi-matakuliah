@@ -261,7 +261,7 @@ public class dataDosen extends javax.swing.JFrame {
         return tblDosen;
     }
     
-     public void addListener(ActionListener e) {
+    public void addListener(ActionListener e) {
         btnHome.addActionListener(e);
         btnInsert.addActionListener(e);
         btnView.addActionListener(e);
